@@ -8,6 +8,7 @@ export default class UI {
     static popFormEl = document.forms[1];
     static erorrMsgEl = document.querySelector('.errorMsg');
     static sortBtnEl = document.querySelector('.sortBtn');
+    static todoCountsEl = document.getElementById('todoCounts');
 
     static makeTodoDiv(todo) {
         //  <div class="container">
@@ -26,7 +27,7 @@ export default class UI {
         //      </div>
         upperDiv.append(h6ElTime, h6ElRemaining);
         /* <span> Morning DnB<i class="fa-solid fa-pen-to-square list-btn edit-btn"></i><i
-                  class="fa-solid fa-trash list-btn delete-btn"></i></span> */
+        class="fa-solid fa-trash list-btn delete-btn"></i></span> */
         const memoEl = document.createElement('span');
         memoEl.innerHTML = ` ${todo.text}<i class="fa-solid fa-pen-to-square list-btn edit-btn"></i><i
     class="fa-solid fa-trash list-btn delete-btn"></i>`
@@ -36,6 +37,7 @@ export default class UI {
     }
 
     static showTodosHtml(array) {
+        UI.todoCountsEl.textContent = `Todos: ${array.length}`;
         UI.outputEl.innerHTML = '';
         array.forEach(todo => {
             const todoDiv = UI.makeTodoDiv(todo);
@@ -44,11 +46,10 @@ export default class UI {
     }
 
     static showPopUp(todo) {
-        // return new Promise((resolve) => {
         UI.popFormEl.style.display = 'block';
         UI.popFormEl.elements[0].value = todo.time.split(' ').join('T');
         UI.popFormEl.elements[1].value = todo.text;
-        // resolve();})
+
 
     }
 }

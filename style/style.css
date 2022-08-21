@@ -79,6 +79,12 @@ div.container {
   border-radius: 5px;
 }
 
+#todoCounts {
+  float: right;
+  color: #fff;
+  text-shadow: 2px 2px 2px darkcyan;
+}
+
 .sortBtn {
   background-color: #fff;
   border: none;
