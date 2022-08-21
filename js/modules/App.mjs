@@ -3,8 +3,8 @@
 
 export default class App {
     static counter = 1
-    static todoToEdit = {};
     constructor() {
+        this.todoToEdit = {};
         this.array = [];
         this.checkMemory();
     }
@@ -19,7 +19,7 @@ export default class App {
     }
     addTodo(todo) {
         this.array.push(todo);
-
+        console.log('this.array ===', this.array);
         localStorage.setItem("todoArr", JSON.stringify(this.array));
 
         localStorage.setItem("todoCount", JSON.stringify(App.counter));
@@ -31,11 +31,9 @@ export default class App {
     }
 
     updateMemory(timeIn, textIn) {
-        console.log('before ===', this.array);
-        console.log('  App.todoToEdit ===', App.todoToEdit);
-        App.todoToEdit.time = timeIn;
-        App.todoToEdit.text = textIn;
-        console.log('after ===', this.array);
+        this.todoToEdit.time = timeIn;
+        this.todoToEdit.text = textIn;
+        // this.todoToEdit.edit(timeIn, textIn);
         localStorage.setItem("todoArr", JSON.stringify(this.array));
     }
 }

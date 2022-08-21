@@ -7,4 +7,8 @@ export default class Todo {
         this.text = textIn;
         this.id = ++App.counter;
     }
+    edit(timeIn, textIn) {
+        this.time = timeIn;
+        this.text = textIn;
+    }
 }

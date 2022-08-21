@@ -12,11 +12,18 @@ init();
 
 UI.formEl.addEventListener('submit', e => {
     e.preventDefault();
+    UI.erorrMsgEl.style.display = 'none';
     const time = new Date(UI.formEl.elements[0].value).toLocaleTimeString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
     const memo = UI.formEl.elements[1].value;
-    const todo = new Todo(time, memo);
-    app.addTodo(todo);
-    UI.showTodosHtml(app.array);
+    if (time == 'Invalid Date' || memo == '') {
+        UI.erorrMsgEl.style.display = 'inline-block';
+    }
+    else {
+        const todo = new Todo(time, memo);
+        app.addTodo(todo);
+        UI.showTodosHtml(app.array);
+    }
+
 })
 
 UI.outputEl.addEventListener('click', (event) => {
@@ -31,8 +38,8 @@ UI.outputEl.addEventListener('click', (event) => {
     // edit mygtukas
     if (event.target.className.includes('edit-btn')) {
         const id = event.target.parentElement.parentElement.dataset.id;
-        App.todoToEdit = app.array.find(todo => todo.id == id);
-        UI.showPopUp(App.todoToEdit)
+        app.todoToEdit = app.array.find(todo => todo.id == id);
+        UI.showPopUp(app.todoToEdit)
 
     }
 });

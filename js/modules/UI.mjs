@@ -1,8 +1,12 @@
 'use strict';
+
+import timeRemaining from "./Time.mjs";
+
 export default class UI {
     static outputEl = document.getElementById('output');
     static formEl = document.forms[0];
     static popFormEl = document.forms[1];
+    static erorrMsgEl = document.querySelector('.errorMsg');
 
     static makeTodoDiv(todo) {
         //  <div class="container">
@@ -17,7 +21,7 @@ export default class UI {
         h6ElTime.textContent = todo.time//.toLocaleTimeString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
         //       <h6><i class="fa-solid fa-clock-rotate-left"></i> time remaining</h6>
         const h6ElRemaining = document.createElement('h6');
-        h6ElRemaining.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i>${todo.time} `;
+        h6ElRemaining.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> ${timeRemaining(todo.time)} `;
         //      </div>
         upperDiv.append(h6ElTime, h6ElRemaining);
         /* <span> Morning DnB<i class="fa-solid fa-pen-to-square list-btn edit-btn"></i><i

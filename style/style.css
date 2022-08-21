@@ -68,7 +68,8 @@ div.container {
 }
 
 .errorMsg {
-  display: inline-block;
+  display: none;
+  /* display: inline-block; */
   background-color: lightcoral;
   color: white;
   padding: 6px;
