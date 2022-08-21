@@ -36,4 +36,21 @@ export default class App {
         // this.todoToEdit.edit(timeIn, textIn);
         localStorage.setItem("todoArr", JSON.stringify(this.array));
     }
+
+    sortArr(direction) {
+        if (direction == "asc")
+            this.array.sort((a, b) => {
+                if (a.time < b.time) { return -1; }
+                if (a.time > b.time) { return 1; }
+                return 0;
+            })
+
+        if (direction == 'desc')
+            this.array.sort((a, b) => {
+                if (a.time < b.time) { return 1; }
+                if (a.time > b.time) { return -1; }
+                return 0;
+            })
+
+    }
 }

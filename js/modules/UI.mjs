@@ -7,6 +7,7 @@ export default class UI {
     static formEl = document.forms[0];
     static popFormEl = document.forms[1];
     static erorrMsgEl = document.querySelector('.errorMsg');
+    static sortBtnEl = document.querySelector('.sortBtn');
 
     static makeTodoDiv(todo) {
         //  <div class="container">

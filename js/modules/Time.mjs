@@ -1,7 +1,7 @@
 export default function timeRemaining(date) {
     const currentTime = Date.parse(new Date());
     const remaining = Date.parse(date) - currentTime;
-    if (remaining < 0) return 'expired';
+    if (remaining < 0) return 'EXPIRED';
     return convertMsToHM(remaining);
 }
 

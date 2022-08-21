@@ -1,7 +1,10 @@
 @import "reset.css";
 
-.container {
+body {
   max-width: 570px;
+  margin: 0 auto;
+}
+.container {
   background-color: #fff;
   margin: 10px auto;
   padding: 12px;
@@ -74,6 +77,12 @@ div.container {
   color: white;
   padding: 6px;
   border-radius: 5px;
+}
+
+.sortBtn {
+  background-color: #fff;
+  border: none;
+  padding: 3px 12px;
 }
 
 .upper {
