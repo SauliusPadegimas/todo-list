@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/style.css" />
+  <script src="https://kit.fontawesome.com/3e156d10f3.js" crossorigin="anonymous"></script>
+  <script src="./js/main.js" type="module"></script>
+</head>
+
+<body>
+  <form class="container">
+    <input type="datetime-local" name="" class="dateIn" />
+    <span class="errorMsg"><i class="fa-solid fa-circle-exclamation"></i> Missing data</span>
+    <input type="text" name="" class="memoIn" placeholder="To play..." />
+    <button type="submit" id="btnSubmit">+</button>
+  </form>
+  <form id="popup" class="popup" style="display: none;">
+    <input type="datetime-local" name="" class="dateIn popup" />
+    <input type="text" name="" class="memoIn popup" placeholder="To play..." />
+    <button type="submit" id="" class="popup">Update</button>
+  </form>
+  <section id="output">
+    <div class="container">
+      <div class="upper">
+        <h6>2002-11-23 12:32</h6>
+        <h6><i class="fa-solid fa-clock-rotate-left"></i> time remaining</h6>
+      </div>
+      <span>
+        Morning DnB<i class="fa-solid fa-pen-to-square list-btn edit-btn"></i><i
+          class="fa-solid fa-trash list-btn delete-btn"></i></span>
+    </div>
+    <div class="container">
+      <div class="upper">
+        <h6>2002-11-23 12:32</h6>
+        <h6><i class="fa-solid fa-clock-rotate-left"></i> time remaining</h6>
+      </div>
+      Noon News<i class="fa-solid fa-pen-to-square list-btn edit-btn"></i><i
+        class="fa-solid fa-trash list-btn delete-btn"></i>
+    </div>
+  </section>
+</body>
+
+</html>
