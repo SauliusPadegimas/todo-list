@@ -35,7 +35,7 @@ UI.formEl.addEventListener('submit', e => {
 UI.outputEl.addEventListener('click', (event) => {
     // delete mygtukas
     if (event.target.className.includes('delete-btn')) {
-        event.target.parentElement.parentElement.style.backgroundColor = 'lightcoral';
+        event.target.parentElement.parentElement.style.backgroundColor = 'rgb(247, 176, 176)';
         const id = event.target.parentElement.parentElement.dataset.id;
         app.removeTodo(id);
         setTimeout(() => UI.showTodosHtml(app.array), 1000)

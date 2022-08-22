@@ -10,7 +10,9 @@ body {
   padding: 12px;
   color: black;
   position: relative;
+  border-radius: 3px;
 }
+
 #popup {
   text-align: center;
   width: 3 00px;
